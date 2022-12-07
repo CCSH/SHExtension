@@ -198,6 +198,11 @@
     return [rangeArr copy];
 }
 
+#pragma mark 忽略大小写判断
+- (BOOL)isEqualsIgnoreCaseToString:(NSString *)aString{
+    retrun [self.uppercaseString isEqualToString:aString.uppercaseString];
+}
+
 #pragma mark - AES-CBC
 #pragma mark AES128-CBC-NoPadding 加密
 - (NSString *)AES128EncryptWithKey:(NSString *)key iv:(NSString *)iv {
