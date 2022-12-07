@@ -46,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 获取所有字符串出现范围
 - (NSArray *)rangesOfString:(NSString *)obj;
 
+#pragma mark 忽略大小写判断
+- (BOOL)isEqualsIgnoreCaseToString:(NSString *)aString;
+
 #pragma mark - AES-CBC
 #pragma mark AES128-CBC-NoPadding 加密
 - (NSString *)AES128EncryptWithKey:(NSString *)key iv:(NSString *)iv;
