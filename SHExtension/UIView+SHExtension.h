@@ -128,7 +128,6 @@ IBInspectable @interface UIView(SHExtension)
 @property (nonatomic, assign) IBInspectable CGFloat shadowRadius;
 //阴影路径
 @property (nonatomic, assign) IBInspectable CGPathRef shadowPath;
-
 //阴影位置
 @property (nonatomic, assign) IBInspectable SHViewShadowType shadowType;
 
