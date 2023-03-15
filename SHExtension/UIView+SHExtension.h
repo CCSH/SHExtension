@@ -102,7 +102,7 @@ IBInspectable @interface UIView(SHExtension)
 - (void)makeMaskViewWithImage:(UIImage *)image;
 
 #pragma mark 复制
-- (id)copy_obj:(id)obj;
++ (id)copy_obj:(id)obj;
 
 #pragma mark - xib 属性
 //加载xib
