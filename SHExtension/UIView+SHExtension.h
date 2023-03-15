@@ -95,7 +95,7 @@ IBInspectable @interface UIView(SHExtension)
 /// @param isHorizonal 是否水平
 - (void)drawDashed:(UIColor *)lineColor lineWidth:(CGFloat)lineWidth lineDashPattern:(NSArray<NSNumber *> *)lineDashPattern isHorizonal:(BOOL)isHorizonal;
 
-#pragma mark 获取一个渐变色的视图
+#pragma mark 获取一个渐变色的视图(colorArr:(__bridge id)[UIColor redColor].CGColor)
 + (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray *)colorArr;
 
 #pragma mark 按照图片裁剪视图
