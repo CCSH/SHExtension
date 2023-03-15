@@ -132,7 +132,7 @@ static ClickBlock _clickBlock;
 
 #pragma mark 复制视图
 - (UIView *)sh_copy {
-    return [self copy_obj:self];
+    return [[self class] copy_obj:self];
 }
 
 - (void)setDragEdge:(UIEdgeInsets)dragEdge {
@@ -323,14 +323,18 @@ static ClickBlock _clickBlock;
 }
 
 #pragma mark 获取一个渐变色的视图
-+ (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray *)colorArr {
++ (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray <UIColor *>*)colorArr {
     UIView *view = [[UIView alloc] init];
     view.size = size;
     //  CAGradientLayer类对其绘制渐变背景颜色、填充层的形状(包括圆角)
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = view.bounds;
     //  创建渐变色数组，需要转换为CGColor颜色
-    gradientLayer.colors = colorArr;
+    NSMutableArray *colors = [[NSMutableArray alloc]init];
+    for (UIColor *obj in colorArr) {
+        [colors addObject:(__bridge id)obj.CGColor];
+    }
+    gradientLayer.colors = colors;
 
     //  设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
     gradientLayer.startPoint = startPoint;

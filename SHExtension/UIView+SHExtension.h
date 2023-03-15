@@ -96,7 +96,7 @@ IBInspectable @interface UIView(SHExtension)
 - (void)drawDashed:(UIColor *)lineColor lineWidth:(CGFloat)lineWidth lineDashPattern:(NSArray<NSNumber *> *)lineDashPattern isHorizonal:(BOOL)isHorizonal;
 
 #pragma mark 获取一个渐变色的视图(colorArr:(__bridge id)[UIColor redColor].CGColor)
-+ (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray *)colorArr;
++ (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray <UIColor *>*)colorArr;
 
 #pragma mark 按照图片裁剪视图
 - (void)makeMaskViewWithImage:(UIImage *)image;

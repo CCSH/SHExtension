@@ -57,19 +57,19 @@
     [view drawDashed:[UIColor orangeColor] lineWidth:10 lineDashPattern:@[@(5),@(5)] isHorizonal:NO];
     [self.view addSubview:view];
     view.dragEdge = UIEdgeInsetsMake(10, 10, 10, 10);
-//    view.dragBlock = ^(UIView * _Nonnull dragView) {
-//        [UIView animateWithDuration:0.1 animations:^{
-//            dragView.x = kSHWidth - view.width - 10;
-//            CGFloat view_y = 10;
-//            if (dragView.y < view_y) {
-//                dragView.y = view_y;
-//            }
-//            view_y = self.view.height - dragView.height - 10;
-//            if (view.y > view_y) {
-//                dragView.y = view_y;
-//            }
-//        }];
-//    };
+    view.dragBlock = ^(UIView * _Nonnull dragView) {
+        [UIView animateWithDuration:0.1 animations:^{
+            dragView.x = kSHWidth - view.width - 10;
+            CGFloat view_y = 10;
+            if (dragView.y < view_y) {
+                dragView.y = view_y;
+            }
+            view_y = self.view.height - dragView.height - 10;
+            if (view.y > view_y) {
+                dragView.y = view_y;
+            }
+        }];
+    };
     
     UIView *view1 = [[UIView alloc]init];
     view1.frame = CGRectMake(150, 100, 100, 100);
@@ -105,6 +105,11 @@
     NSString *aes = [@"12345" AES128EncryptWithKey:@"0000000000000000"];
     aes = [aes AES128DecryptWithKey:@"0000000000000000"];
     NSLog(@"aes-cbc===%@",aes);
+    
+    UIView *view3 = [UIView getGradientViewWithSize:CGSizeMake(40, 20) startPoint:CGPointMake(0, 0.5) endPoint:CGPointMake(1, 0.5) colorArr:@[[UIColor redColor],[UIColor blueColor]]];
+    view3.origin = CGPointMake(0, 120);
+    [self.view addSubview:view3];
+    
 }
 
 - (void)btnAction{

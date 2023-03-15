@@ -200,7 +200,7 @@
 
 #pragma mark 忽略大小写判断
 - (BOOL)isEqualsIgnoreCaseToString:(NSString *)aString{
-    retrun [self.uppercaseString isEqualToString:aString.uppercaseString];
+    return [self.uppercaseString isEqualToString:aString.uppercaseString];
 }
 
 #pragma mark - AES-CBC
