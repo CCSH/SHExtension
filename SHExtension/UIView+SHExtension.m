@@ -373,7 +373,7 @@ static ClickBlock _clickBlock;
 }
 
 #pragma mark 复制
-- (id)copy_obj:(id)obj {
++ (id)copy_obj:(id)obj {
     NSData *temp = [NSKeyedArchiver archivedDataWithRootObject:obj];
     return [NSKeyedUnarchiver unarchiveObjectWithData:temp];
 }
