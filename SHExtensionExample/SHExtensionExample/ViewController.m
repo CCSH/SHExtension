@@ -105,7 +105,7 @@
     NSString *aes = [@"12345" AES128EncryptWithKey:@"0000000000000000"];
     aes = [aes AES128DecryptWithKey:@"0000000000000000"];
     NSLog(@"aes-cbc===%@",aes);
-    
+    //渐变视图
     UIView *view3 = [UIView getGradientViewWithSize:CGSizeMake(40, 20) startPoint:CGPointMake(0, 0.5) endPoint:CGPointMake(1, 0.5) colorArr:@[[UIColor redColor],[UIColor blueColor]]];
     view3.origin = CGPointMake(0, 120);
     [self.view addSubview:view3];
