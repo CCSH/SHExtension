@@ -475,6 +475,7 @@ static ClickBlock _clickBlock;
 
 #pragma mark 阴影位置
 - (void)setShadowType:(SHViewShadowType)shadowType {
+    _shadowType = shadowType;
     CGRect frame = self.bounds;
 
     CGFloat space = self.shadowRadius / 4;
@@ -500,7 +501,7 @@ static ClickBlock _clickBlock;
 }
 
 - (SHViewShadowType)shadowType {
-    return SHViewShadowType_center;
+    return _shadowType;
 }
 
 @end
