@@ -3,15 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D541DB0C559A32CC8A0CE67 /* Pods_SHExtensionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA01732CF288A53CB95A82F /* Pods_SHExtensionExample.framework */; };
-		5C31955B278E68D800701F5C /* NSArray+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C319556278E68D800701F5C /* NSArray+SHExtension.m */; };
-		5C31955C278E68D800701F5C /* NSDictionary+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C319557278E68D800701F5C /* NSDictionary+SHExtension.m */; };
-		5C319560278E778A00701F5C /* SHUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C31955F278E778A00701F5C /* SHUncaughtExceptionHandler.m */; };
-		5C58754727A2720200804B67 /* UIScrollView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C58754627A2720200804B67 /* UIScrollView+SHExtension.m */; };
 		5C73D5FA2153745E008D91D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D5F92153745E008D91D8 /* AppDelegate.m */; };
 		5C73D5FD2153745E008D91D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D5FC2153745E008D91D8 /* ViewController.m */; };
 		5C73D6002153745E008D91D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C73D5FE2153745E008D91D8 /* Main.storyboard */; };
@@ -21,16 +17,20 @@
 		5C73D61221537460008D91D8 /* SHExtensionExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D61121537460008D91D8 /* SHExtensionExampleTests.m */; };
 		5C73D61D21537460008D91D8 /* SHExtensionExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C73D61C21537460008D91D8 /* SHExtensionExampleUITests.m */; };
 		5C7E693E216DDE810095939F /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C7E693D216DDE810095939F /* 2.png */; };
-		5C8BE5BC27A0D6A000D6B4CB /* UIViewController+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE5BB27A0D6A000D6B4CB /* UIViewController+SHExtension.m */; };
+		5CBBC6A929DEB84B0080A437 /* UIImage+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC68529DEB84B0080A437 /* UIImage+SHExtension.m */; };
+		5CBBC6AA29DEB84B0080A437 /* NSDictionary+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC68729DEB84B0080A437 /* NSDictionary+SHExtension.m */; };
+		5CBBC6AB29DEB84B0080A437 /* NSArray+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC68829DEB84B0080A437 /* NSArray+SHExtension.m */; };
+		5CBBC6AC29DEB84B0080A437 /* UIScrollView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC68C29DEB84B0080A437 /* UIScrollView+SHExtension.m */; };
+		5CBBC6AD29DEB84B0080A437 /* SHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC68F29DEB84B0080A437 /* SHButton.m */; };
+		5CBBC6AE29DEB84B0080A437 /* UIButton+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC69229DEB84B0080A437 /* UIButton+SHExtension.m */; };
+		5CBBC6AF29DEB84B0080A437 /* UIColor+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC69529DEB84B0080A437 /* UIColor+SHExtension.m */; };
+		5CBBC6B029DEB84B0080A437 /* UIView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC69729DEB84B0080A437 /* UIView+SHExtension.m */; };
+		5CBBC6B129DEB84B0080A437 /* UIImageView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC69B29DEB84B0080A437 /* UIImageView+SHExtension.m */; };
+		5CBBC6B229DEB84B0080A437 /* NSString+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC69E29DEB84B0080A437 /* NSString+SHExtension.m */; };
+		5CBBC6B329DEB84B0080A437 /* UIViewController+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC6A129DEB84B0080A437 /* UIViewController+SHExtension.m */; };
+		5CBBC6B429DEB84B0080A437 /* SHUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC6A429DEB84B0080A437 /* SHUncaughtExceptionHandler.m */; };
+		5CBBC6B529DEB84B0080A437 /* SHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBC6A829DEB84B0080A437 /* SHTool.m */; };
 		5CD106EEE1495162C6554C77 /* Pods_SHExtensionExample_SHExtensionExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6495718C2AD5A72C1C1BD337 /* Pods_SHExtensionExample_SHExtensionExampleUITests.framework */; };
-		8345737E25E4A85A00F0243F /* SHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345736E25E4A85A00F0243F /* SHButton.m */; };
-		8345737F25E4A85A00F0243F /* UIView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737025E4A85A00F0243F /* UIView+SHExtension.m */; };
-		8345738025E4A85A00F0243F /* UIImageView+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737125E4A85A00F0243F /* UIImageView+SHExtension.m */; };
-		8345738125E4A85A00F0243F /* NSString+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737525E4A85A00F0243F /* NSString+SHExtension.m */; };
-		8345738225E4A85A00F0243F /* SHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737625E4A85A00F0243F /* SHTool.m */; };
-		8345738325E4A85A00F0243F /* UIButton+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737825E4A85A00F0243F /* UIButton+SHExtension.m */; };
-		8345738425E4A85A00F0243F /* UIColor+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737B25E4A85A00F0243F /* UIColor+SHExtension.m */; };
-		8345738525E4A85A00F0243F /* UIImage+SHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345737C25E4A85A00F0243F /* UIImage+SHExtension.m */; };
 		836E0DE425636D4F002B7600 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 836E0DE325636D4B002B7600 /* 1.jpeg */; };
 		F00BD9625C48F2A625D63EC1 /* Pods_SHExtensionExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E2A66E93AB6EAB334F8A1A /* Pods_SHExtensionExampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,15 +55,7 @@
 /* Begin PBXFileReference section */
 		27F467A6C36B742EE53F479C /* Pods-SHExtensionExample-SHExtensionExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHExtensionExample-SHExtensionExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-SHExtensionExample-SHExtensionExampleUITests/Pods-SHExtensionExample-SHExtensionExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		50E2A66E93AB6EAB334F8A1A /* Pods_SHExtensionExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHExtensionExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C319555278E68D800701F5C /* NSArray+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SHExtension.h"; sourceTree = "<group>"; };
-		5C319556278E68D800701F5C /* NSArray+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SHExtension.m"; sourceTree = "<group>"; };
-		5C319557278E68D800701F5C /* NSDictionary+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SHExtension.m"; sourceTree = "<group>"; };
-		5C31955A278E68D800701F5C /* NSDictionary+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SHExtension.h"; sourceTree = "<group>"; };
-		5C31955E278E778A00701F5C /* SHUncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHUncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		5C31955F278E778A00701F5C /* SHUncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		5C47AD9F54DBB8E993CBA14D /* Pods-SHExtensionExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHExtensionExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SHExtensionExampleTests/Pods-SHExtensionExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5C58754527A2720200804B67 /* UIScrollView+SHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SHExtension.h"; sourceTree = "<group>"; };
-		5C58754627A2720200804B67 /* UIScrollView+SHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SHExtension.m"; sourceTree = "<group>"; };
 		5C73D5F52153745E008D91D8 /* SHExtensionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHExtensionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C73D5F82153745E008D91D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C73D5F92153745E008D91D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,27 +73,36 @@
 		5C73D61C21537460008D91D8 /* SHExtensionExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHExtensionExampleUITests.m; sourceTree = "<group>"; };
 		5C73D61E21537460008D91D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C7E693D216DDE810095939F /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		5C8BE5BA27A0D6A000D6B4CB /* UIViewController+SHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SHExtension.h"; sourceTree = "<group>"; };
-		5C8BE5BB27A0D6A000D6B4CB /* UIViewController+SHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC68429DEB84B0080A437 /* UIImage+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC68529DEB84B0080A437 /* UIImage+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC68729DEB84B0080A437 /* NSDictionary+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC68829DEB84B0080A437 /* NSArray+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC68929DEB84B0080A437 /* NSDictionary+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC68A29DEB84B0080A437 /* NSArray+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC68C29DEB84B0080A437 /* UIScrollView+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC68D29DEB84B0080A437 /* UIScrollView+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC68F29DEB84B0080A437 /* SHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHButton.m; sourceTree = "<group>"; };
+		5CBBC69029DEB84B0080A437 /* UIButton+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC69129DEB84B0080A437 /* SHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHButton.h; sourceTree = "<group>"; };
+		5CBBC69229DEB84B0080A437 /* UIButton+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC69429DEB84B0080A437 /* UIColor+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC69529DEB84B0080A437 /* UIColor+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC69729DEB84B0080A437 /* UIView+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC69829DEB84B0080A437 /* UIView+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC69929DEB84B0080A437 /* SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHExtension.h; sourceTree = "<group>"; };
+		5CBBC69B29DEB84B0080A437 /* UIImageView+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC69C29DEB84B0080A437 /* UIImageView+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC69E29DEB84B0080A437 /* NSString+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC69F29DEB84B0080A437 /* NSString+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC6A129DEB84B0080A437 /* UIViewController+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SHExtension.m"; sourceTree = "<group>"; };
+		5CBBC6A229DEB84B0080A437 /* UIViewController+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SHExtension.h"; sourceTree = "<group>"; };
+		5CBBC6A429DEB84B0080A437 /* SHUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		5CBBC6A529DEB84B0080A437 /* SHUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		5CBBC6A729DEB84B0080A437 /* SHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTool.h; sourceTree = "<group>"; };
+		5CBBC6A829DEB84B0080A437 /* SHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTool.m; sourceTree = "<group>"; };
 		6495718C2AD5A72C1C1BD337 /* Pods_SHExtensionExample_SHExtensionExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHExtensionExample_SHExtensionExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE51790ECA503C4A084EF4F /* Pods-SHExtensionExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHExtensionExample.release.xcconfig"; path = "Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample.release.xcconfig"; sourceTree = "<group>"; };
 		7E68B41A60AAFF4D50C81B57 /* Pods-SHExtensionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHExtensionExample.debug.xcconfig"; path = "Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample.debug.xcconfig"; sourceTree = "<group>"; };
-		8345736E25E4A85A00F0243F /* SHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHButton.m; sourceTree = "<group>"; };
-		8345736F25E4A85A00F0243F /* SHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTool.h; sourceTree = "<group>"; };
-		8345737025E4A85A00F0243F /* UIView+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SHExtension.m"; sourceTree = "<group>"; };
-		8345737125E4A85A00F0243F /* UIImageView+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SHExtension.m"; sourceTree = "<group>"; };
-		8345737225E4A85A00F0243F /* UIButton+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SHExtension.h"; sourceTree = "<group>"; };
-		8345737325E4A85A00F0243F /* UIImage+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SHExtension.h"; sourceTree = "<group>"; };
-		8345737425E4A85A00F0243F /* UIColor+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SHExtension.h"; sourceTree = "<group>"; };
-		8345737525E4A85A00F0243F /* NSString+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHExtension.m"; sourceTree = "<group>"; };
-		8345737625E4A85A00F0243F /* SHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTool.m; sourceTree = "<group>"; };
-		8345737725E4A85A00F0243F /* SHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHButton.h; sourceTree = "<group>"; };
-		8345737825E4A85A00F0243F /* UIButton+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SHExtension.m"; sourceTree = "<group>"; };
-		8345737925E4A85A00F0243F /* UIImageView+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SHExtension.h"; sourceTree = "<group>"; };
-		8345737A25E4A85A00F0243F /* UIView+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SHExtension.h"; sourceTree = "<group>"; };
-		8345737B25E4A85A00F0243F /* UIColor+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SHExtension.m"; sourceTree = "<group>"; };
-		8345737C25E4A85A00F0243F /* UIImage+SHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SHExtension.m"; sourceTree = "<group>"; };
-		8345737D25E4A85A00F0243F /* NSString+SHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHExtension.h"; sourceTree = "<group>"; };
 		836E0DE325636D4B002B7600 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		ABA01732CF288A53CB95A82F /* Pods_SHExtensionExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHExtensionExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F4F34DF7890FBAD2FED14F /* Pods-SHExtensionExample-SHExtensionExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHExtensionExample-SHExtensionExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SHExtensionExample-SHExtensionExampleUITests/Pods-SHExtensionExample-SHExtensionExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 				5C47AD9F54DBB8E993CBA14D /* Pods-SHExtensionExampleTests.debug.xcconfig */,
 				FC39E42694E0369E7800C63F /* Pods-SHExtensionExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,7 +175,7 @@
 		5C73D5F72153745E008D91D8 /* SHExtensionExample */ = {
 			isa = PBXGroup;
 			children = (
-				8345736D25E4A85A00F0243F /* SHExtension */,
+				5CBBC68229DEB84B0080A437 /* SHExtension */,
 				836E0DE325636D4B002B7600 /* 1.jpeg */,
 				5C7E693D216DDE810095939F /* 2.png */,
 				5C73D5F82153745E008D91D8 /* AppDelegate.h */,
@@ -209,38 +209,127 @@
 			path = SHExtensionExampleUITests;
 			sourceTree = "<group>";
 		};
-		8345736D25E4A85A00F0243F /* SHExtension */ = {
+		5CBBC68229DEB84B0080A437 /* SHExtension */ = {
 			isa = PBXGroup;
 			children = (
-				5C319555278E68D800701F5C /* NSArray+SHExtension.h */,
-				5C319556278E68D800701F5C /* NSArray+SHExtension.m */,
-				5C31955A278E68D800701F5C /* NSDictionary+SHExtension.h */,
-				5C319557278E68D800701F5C /* NSDictionary+SHExtension.m */,
-				8345736F25E4A85A00F0243F /* SHTool.h */,
-				8345737625E4A85A00F0243F /* SHTool.m */,
-				8345737A25E4A85A00F0243F /* UIView+SHExtension.h */,
-				8345737025E4A85A00F0243F /* UIView+SHExtension.m */,
-				8345737325E4A85A00F0243F /* UIImage+SHExtension.h */,
-				8345737C25E4A85A00F0243F /* UIImage+SHExtension.m */,
-				8345737925E4A85A00F0243F /* UIImageView+SHExtension.h */,
-				8345737125E4A85A00F0243F /* UIImageView+SHExtension.m */,
-				8345737225E4A85A00F0243F /* UIButton+SHExtension.h */,
-				8345737825E4A85A00F0243F /* UIButton+SHExtension.m */,
-				8345737D25E4A85A00F0243F /* NSString+SHExtension.h */,
-				8345737525E4A85A00F0243F /* NSString+SHExtension.m */,
-				8345737725E4A85A00F0243F /* SHButton.h */,
-				8345736E25E4A85A00F0243F /* SHButton.m */,
-				8345737425E4A85A00F0243F /* UIColor+SHExtension.h */,
-				8345737B25E4A85A00F0243F /* UIColor+SHExtension.m */,
-				5C31955E278E778A00701F5C /* SHUncaughtExceptionHandler.h */,
-				5C31955F278E778A00701F5C /* SHUncaughtExceptionHandler.m */,
-				5C8BE5BA27A0D6A000D6B4CB /* UIViewController+SHExtension.h */,
-				5C8BE5BB27A0D6A000D6B4CB /* UIViewController+SHExtension.m */,
-				5C58754527A2720200804B67 /* UIScrollView+SHExtension.h */,
-				5C58754627A2720200804B67 /* UIScrollView+SHExtension.m */,
+				5CBBC69929DEB84B0080A437 /* SHExtension.h */,
+				5CBBC68329DEB84B0080A437 /* UIImage */,
+				5CBBC68629DEB84B0080A437 /* Safe */,
+				5CBBC68B29DEB84B0080A437 /* UIScrollView */,
+				5CBBC68E29DEB84B0080A437 /* UIButton */,
+				5CBBC69329DEB84B0080A437 /* UIColor */,
+				5CBBC69629DEB84B0080A437 /* UIView */,
+				5CBBC69A29DEB84B0080A437 /* UIImageView */,
+				5CBBC69D29DEB84B0080A437 /* NSString */,
+				5CBBC6A029DEB84B0080A437 /* UIViewController */,
+				5CBBC6A329DEB84B0080A437 /* Exception */,
+				5CBBC6A629DEB84B0080A437 /* Tool */,
 			);
 			name = SHExtension;
 			path = ../../SHExtension;
+			sourceTree = "<group>";
+		};
+		5CBBC68329DEB84B0080A437 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC68429DEB84B0080A437 /* UIImage+SHExtension.h */,
+				5CBBC68529DEB84B0080A437 /* UIImage+SHExtension.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		5CBBC68629DEB84B0080A437 /* Safe */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC68929DEB84B0080A437 /* NSDictionary+SHExtension.h */,
+				5CBBC68729DEB84B0080A437 /* NSDictionary+SHExtension.m */,
+				5CBBC68A29DEB84B0080A437 /* NSArray+SHExtension.h */,
+				5CBBC68829DEB84B0080A437 /* NSArray+SHExtension.m */,
+			);
+			path = Safe;
+			sourceTree = "<group>";
+		};
+		5CBBC68B29DEB84B0080A437 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC68D29DEB84B0080A437 /* UIScrollView+SHExtension.h */,
+				5CBBC68C29DEB84B0080A437 /* UIScrollView+SHExtension.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		5CBBC68E29DEB84B0080A437 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC69129DEB84B0080A437 /* SHButton.h */,
+				5CBBC68F29DEB84B0080A437 /* SHButton.m */,
+				5CBBC69029DEB84B0080A437 /* UIButton+SHExtension.h */,
+				5CBBC69229DEB84B0080A437 /* UIButton+SHExtension.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		5CBBC69329DEB84B0080A437 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC69429DEB84B0080A437 /* UIColor+SHExtension.h */,
+				5CBBC69529DEB84B0080A437 /* UIColor+SHExtension.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		5CBBC69629DEB84B0080A437 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC69829DEB84B0080A437 /* UIView+SHExtension.h */,
+				5CBBC69729DEB84B0080A437 /* UIView+SHExtension.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		5CBBC69A29DEB84B0080A437 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC69C29DEB84B0080A437 /* UIImageView+SHExtension.h */,
+				5CBBC69B29DEB84B0080A437 /* UIImageView+SHExtension.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		5CBBC69D29DEB84B0080A437 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC69F29DEB84B0080A437 /* NSString+SHExtension.h */,
+				5CBBC69E29DEB84B0080A437 /* NSString+SHExtension.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		5CBBC6A029DEB84B0080A437 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC6A229DEB84B0080A437 /* UIViewController+SHExtension.h */,
+				5CBBC6A129DEB84B0080A437 /* UIViewController+SHExtension.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		5CBBC6A329DEB84B0080A437 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC6A529DEB84B0080A437 /* SHUncaughtExceptionHandler.h */,
+				5CBBC6A429DEB84B0080A437 /* SHUncaughtExceptionHandler.m */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		5CBBC6A629DEB84B0080A437 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5CBBC6A729DEB84B0080A437 /* SHTool.h */,
+				5CBBC6A829DEB84B0080A437 /* SHTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		C82018FF51F073CF26674CCF /* Frameworks */ = {
@@ -264,7 +353,7 @@
 				5C73D5F12153745E008D91D8 /* Sources */,
 				5C73D5F22153745E008D91D8 /* Frameworks */,
 				5C73D5F32153745E008D91D8 /* Resources */,
-				D10EB17FDE88AA1B58018A16 /* [CP] Embed Pods Frameworks */,
+				85F2521E0E2AEED685CD2B2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +497,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		85F2521E0E2AEED685CD2B2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E46E8F902461472B0062FD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,23 +553,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample-SHExtensionExampleUITests/Pods-SHExtensionExample-SHExtensionExampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D10EB17FDE88AA1B58018A16 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SHExtensionExample/Pods-SHExtensionExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F926D28141875FF817281462 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,22 +582,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C58754727A2720200804B67 /* UIScrollView+SHExtension.m in Sources */,
-				8345737E25E4A85A00F0243F /* SHButton.m in Sources */,
-				8345737F25E4A85A00F0243F /* UIView+SHExtension.m in Sources */,
+				5CBBC6A929DEB84B0080A437 /* UIImage+SHExtension.m in Sources */,
+				5CBBC6B329DEB84B0080A437 /* UIViewController+SHExtension.m in Sources */,
+				5CBBC6AC29DEB84B0080A437 /* UIScrollView+SHExtension.m in Sources */,
 				5C73D5FD2153745E008D91D8 /* ViewController.m in Sources */,
-				5C31955B278E68D800701F5C /* NSArray+SHExtension.m in Sources */,
-				8345738025E4A85A00F0243F /* UIImageView+SHExtension.m in Sources */,
-				5C31955C278E68D800701F5C /* NSDictionary+SHExtension.m in Sources */,
-				5C319560278E778A00701F5C /* SHUncaughtExceptionHandler.m in Sources */,
-				8345738525E4A85A00F0243F /* UIImage+SHExtension.m in Sources */,
-				8345738225E4A85A00F0243F /* SHTool.m in Sources */,
-				8345738125E4A85A00F0243F /* NSString+SHExtension.m in Sources */,
-				8345738425E4A85A00F0243F /* UIColor+SHExtension.m in Sources */,
+				5CBBC6B129DEB84B0080A437 /* UIImageView+SHExtension.m in Sources */,
 				5C73D60821537460008D91D8 /* main.m in Sources */,
+				5CBBC6AD29DEB84B0080A437 /* SHButton.m in Sources */,
+				5CBBC6B029DEB84B0080A437 /* UIView+SHExtension.m in Sources */,
+				5CBBC6B229DEB84B0080A437 /* NSString+SHExtension.m in Sources */,
+				5CBBC6AB29DEB84B0080A437 /* NSArray+SHExtension.m in Sources */,
+				5CBBC6AF29DEB84B0080A437 /* UIColor+SHExtension.m in Sources */,
 				5C73D5FA2153745E008D91D8 /* AppDelegate.m in Sources */,
-				5C8BE5BC27A0D6A000D6B4CB /* UIViewController+SHExtension.m in Sources */,
-				8345738325E4A85A00F0243F /* UIButton+SHExtension.m in Sources */,
+				5CBBC6B529DEB84B0080A437 /* SHTool.m in Sources */,
+				5CBBC6AA29DEB84B0080A437 /* NSDictionary+SHExtension.m in Sources */,
+				5CBBC6B429DEB84B0080A437 /* SHUncaughtExceptionHandler.m in Sources */,
+				5CBBC6AE29DEB84B0080A437 /* UIButton+SHExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +772,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YHGV678NGG;
 				INFOPLIST_FILE = SHExtensionExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,7 +791,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YHGV678NGG;
 				INFOPLIST_FILE = SHExtensionExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

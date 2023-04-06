@@ -7,13 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NSString+SHExtension.h"
-#import "UIColor+SHExtension.h"
-#import "UIView+SHExtension.h"
-#import "UIImage+SHExtension.h"
-#import "SHTool.h"
-#import "UIButton+SHExtension.h"
-#import "SHButton.h"
+#import "SHExtension.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 
