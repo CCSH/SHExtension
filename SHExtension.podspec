@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.homepage     = 'https://github.com/CCSH/#{s.name}'
     s.source       = { :git => 'https://github.com/CCSH/#{s.name}.git', :tag => s.version }
-    s.source_files = '#{s.name}/**/*.{h,m}',
-    s.frameworks = 'UIKit'
+    s.source_files = '#{s.name}',
+    s.frameworks   = 'UIKit'
 
     #部分功能
     s.subspec 'NSString' do |ss|
