@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.summary      = '常用类别方法，拓展'
     s.authors      = { 'CCSH' => '624089195@qq.com' }
     s.homepage     = 'https://github.com/CCSH/SHExtension'
-    s.source       = { :git => '{s.homepage}.git', :tag => s.version.to_s }
+    s.source       = { :git => 'https://github.com/CCSH/SHExtension.git', :tag => s.version.to_s }
     
     s.requires_arc = true
     s.frameworks   = 'UIKit'
