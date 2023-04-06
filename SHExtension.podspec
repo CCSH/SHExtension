@@ -9,7 +9,9 @@ Pod::Spec.new do |s|
     s.homepage     = 'https://github.com/CCSH/#{s.name}'
     s.source       = { :git => 'https://github.com/CCSH/#{s.name}.git', :tag => s.version }
     s.source_files = '#{s.name}',
+    #s.exclude_files = '',
     s.frameworks   = 'UIKit'
+    s.public_header_files = '#{s.name}/#{s.name}.h'
 
     #部分功能
     s.subspec 'NSString' do |ss|
