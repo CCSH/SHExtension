@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
     s.authors      = { 'CCSH' => '624089195@qq.com' }
     s.platform     = :ios, '8.0'
     s.requires_arc = true
-    s.homepage     = 'https://github.com/CCSH/{s.name}'
-    s.source       = { :git => 'https://github.com/CCSH/{s.name}.git', :tag => s.version }
+    s.homepage     = 'https://github.com/CCSH/#{s.name}'
+    s.source       = { :git => 'https://github.com/CCSH/#{s.name}.git', :tag => s.version }
     s.source_files = '{s.name}',
     #s.exclude_files = '',
+    s.public_header_files = '{s.name}/{s.name}.h',
     s.frameworks   = 'UIKit'
-    s.public_header_files = '{s.name}/{s.name}.h'
-
+    
     #部分功能
     s.subspec 'NSString' do |ss|
         ss.dependency 'GTMBase64'
