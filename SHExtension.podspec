@@ -4,14 +4,12 @@ Pod::Spec.new do |s|
     
     s.platform     = :ios, '8.0'
     
+    s.requires_arc = true
     s.license      = 'MIT'
     s.summary      = '常用类别方法，拓展'
     s.authors      = { 'CCSH' => '624089195@qq.com' }
     s.homepage     = 'https://github.com/CCSH/SHExtension'
     s.source       = { :git => 'https://github.com/CCSH/SHExtension.git', :tag => s.version.to_s }
-    
-    s.requires_arc = true
-    s.frameworks   = 'UIKit'
     
     s.source_files = 'SHExtension/**/*.{h,m}'
     #s.exclude_files = ''
