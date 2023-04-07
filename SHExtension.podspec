@@ -1,19 +1,19 @@
 Pod::Spec.new do |s|
     s.name         = 'SHExtension'
-    s.version      = '1.6.0'
+    s.version      = '1.6.1'
     
     s.platform     = :ios, '11.0'
     
     s.requires_arc = true
     s.license      = 'MIT'
-    s.summary      = '常用类别方法，拓展'
+    s.summary      = '常用类别方法，拓展，工具类'
     s.authors      = { 'CCSH' => '624089195@qq.com' }
-    s.homepage     = 'https://github.com/CCSH/SHExtension'
-    s.source       = { :git => 'https://github.com/CCSH/SHExtension.git', :tag => s.version.to_s }
+    s.homepage     = 'https://github.com/CCSH/#{s.name}'
+    s.source       = { :git => '#{s.homepage}.git',
+                       :tag => s.version.to_s }
     
-    s.source_files = 'SHExtension/**/*'
+    s.source_files = 'SHExtension/**/*','SHExtension/SHExtension.h'
     #s.exclude_files = ''
-    s.public_header_files = 'SHExtension/SHExtension.h'
     
     #部分功能
     s.subspec 'NSString' do |ss|
