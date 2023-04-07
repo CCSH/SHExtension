@@ -19,3 +19,7 @@ pod 'SHExtension/Exception'
 pod 'SHExtension/UIViewController'
 pod 'SHExtension/UIScrollView'
 ```
+或者
+```
+pod 'SHExtension', :subspecs => ['NSString', 'UIView',.....]
+```
