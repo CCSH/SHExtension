@@ -13,54 +13,54 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.frameworks   = 'UIKit'
     
-    s.public_header_files = '{s.name}/{s.name}.h'
-    s.source_files = '{s.name}'
+    s.source_files = 'SHExtension/**/*.{h,m}'
     #s.exclude_files = ''
+    s.public_header_files = 'SHExtension/SHExtension.h'
     
     #部分功能
     s.subspec 'NSString' do |ss|
         ss.dependency 'GTMBase64'
-        ss.source_files = '{s.name}/NSString/*.{h,m}'
+        ss.source_files = 'SHExtension/NSString/*.{h,m}'
     end
 
     s.subspec 'UIButton' do |ss|
-        ss.source_files = '{s.name}/UIButton/*.{h,m}'
+        ss.source_files = 'SHExtension/UIButton/*.{h,m}'
     end
 
     s.subspec 'UIColor' do |ss|
-        ss.source_files = '{s.name}/UIColor/*.{h,m}'
+        ss.source_files = 'SHExtension/UIColor/*.{h,m}'
     end
 
     s.subspec 'UIImage' do |ss|
-        ss.source_files = '{s.name}/UIImage/*.{h,m}'
+        ss.source_files = 'SHExtension/UIImage/*.{h,m}'
     end
 
     s.subspec 'UIImageView' do |ss|
-        ss.source_files = '{s.name}/UIImageView/*.{h,m}'
+        ss.source_files = 'SHExtension/UIImageView/*.{h,m}'
     end
 
     s.subspec 'UIView' do |ss|
-        ss.source_files = '{s.name}/UIView/*.{h,m}'
+        ss.source_files = 'SHExtension/UIView/*.{h,m}'
     end
 
     s.subspec 'Tool' do |ss|
-        ss.source_files = '{s.name}/Tool/*.{h,m}'
+        ss.source_files = 'SHExtension/Tool/*.{h,m}'
     end
     
     s.subspec 'Safe' do |ss|
-        ss.source_files = '{s.name}/Safe/*.{h,m}'
+        ss.source_files = 'SHExtension/Safe/*.{h,m}'
     end
 
     s.subspec 'Exception' do |ss|
-        ss.source_files = '{s.name}/Exception/*.{h,m}'
+        ss.source_files = 'SHExtension/Exception/*.{h,m}'
     end
     
     s.subspec 'UIViewController' do |ss|
-        ss.source_files = '{s.name}/UIViewController/*.{h,m}'
+        ss.source_files = 'SHExtension/UIViewController/*.{h,m}'
     end
     
     s.subspec 'UIScrollView' do |ss|
-        ss.source_files = '{s.name}/UIScrollView/*.{h,m}'
+        ss.source_files = 'SHExtension/UIScrollView/*.{h,m}'
     end
     
 end
