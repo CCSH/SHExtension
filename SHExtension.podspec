@@ -8,11 +8,12 @@ Pod::Spec.new do |s|
     s.license      = 'MIT'
     s.summary      = '常用类别方法，拓展，工具类'
     s.authors      = { 'CCSH' => '624089195@qq.com' }
-    s.homepage     = 'https://github.com/CCSH/#{s.name}'
-    s.source       = { :git => '#{s.homepage}.git',
+    s.homepage     = 'https://github.com/CCSH/SHExtension'
+    s.source       = { :git => 'https://github.com/CCSH/SHExtension.git',
                        :tag => s.version.to_s }
     
-    s.source_files = 'SHExtension/**/*','SHExtension/SHExtension.h'
+    s.source_files = { 'SHExtension/**/*',
+                       'SHExtension/SHExtension.h' }
     #s.exclude_files = ''
     
     #部分功能
