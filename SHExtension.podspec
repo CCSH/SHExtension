@@ -12,8 +12,7 @@ Pod::Spec.new do |s|
     s.source       = { :git => 'https://github.com/CCSH/SHExtension.git',
                        :tag => s.version.to_s }
     
-    s.source_files = { 'SHExtension/**/*',
-                       'SHExtension/SHExtension.h' }
+    s.source_files = 'SHExtension/**/*', 'SHExtension/SHExtension.h'
     #s.exclude_files = ''
     
     #部分功能
