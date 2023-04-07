@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name         = 'SHExtension'
     s.version      = '1.6.1'
     
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '11.0'
     
     s.requires_arc = true
     s.license      = 'MIT'
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.homepage     = 'https://github.com/CCSH/SHExtension'
     s.source       = { :git => 'https://github.com/CCSH/SHExtension.git', :tag => s.version.to_s }
     
-    s.source_files = 'SHExtension/**/*.{h,m}'
+    s.source_files = 'SHExtension/**/*'
     #s.exclude_files = ''
     s.public_header_files = 'SHExtension/SHExtension.h'
     
