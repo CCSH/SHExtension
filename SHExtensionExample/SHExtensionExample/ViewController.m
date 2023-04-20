@@ -26,6 +26,8 @@
     
     NSLog(@"分词===%@",[@"12312" rangesOfString:@"1"]);
     
+    NSLog(@"行高===%f",[SHTool getLineHeightWhitNumberOfLines:2 font:[UIFont systemFontOfSize:14]]);
+    
     [[UIImage imageNamed:@"1.jpeg"] imageCompressionWithByte:10*1024];
     
     [[UIImage imageNamed:@"2"] imageColorWithBlock:^(NSString *colorString) {
@@ -111,10 +113,8 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-
     //处理数据
     [SHTool handleTextField:textField shouldChangeCharactersInRange:range replacementString:string rule:@[@3,@4,@4]];
-    //设置光标位置
     return NO;
 }
 

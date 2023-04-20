@@ -12,8 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #define kSHMinutes (60)
-#define kSHHours (60*kSHMinutes)
-#define kSHDay (24*kSHHours)
+#define kSHHours (60 * kSHMinutes)
+#define kSHDay (24 * kSHHours)
 
 static NSString *sh_fomat_1 = @"YYYY-MM-dd HH:mm:ss";
 static NSString *sh_fomat_2 = @"YYYY.MM.dd";
@@ -69,13 +69,10 @@ static NSString *sh_fomat_10 = @"HH:mm";
 
 #pragma mark - 计算方法
 #pragma mark 计算富文本的size
-+ (CGSize)getSizeWithAtt:(NSAttributedString *)att
-                 maxSize:(CGSize)maxSize;
++ (CGSize)getSizeWithAtt:(NSAttributedString *)att maxSize:(CGSize)maxSize;
 
 #pragma mark 计算字符串的size
-+ (CGSize)getSizeWithStr:(NSString *)str
-                    font:(UIFont *)font
-                 maxSize:(CGSize)maxSize;
++ (CGSize)getSizeWithStr:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize;
 
 #pragma mark 是否超过是否超过规定高度
 + (BOOL)isLineWithAtt:(NSAttributedString *)att lineH:(CGFloat)lineH maxW:(CGFloat)maxW;
@@ -83,8 +80,14 @@ static NSString *sh_fomat_10 = @"HH:mm";
 #pragma mark 获取真实行间距
 + (CGFloat)lineSpaceWithLine:(CGFloat)line font:(UIFont *)font;
 
-#pragma mark 获取属性字符串真实行间距
-+ (CGFloat)lineSpaceWithLineWithAtt:(NSAttributedString *)att line:(CGFloat)line font:(UIFont *)font maxW:(CGFloat)maxW;
+#pragma mark 获取富文本真实行间距
++ (CGFloat)lineSpaceWithLine:(CGFloat)line font:(UIFont *)font att:(NSAttributedString *)att maxW:(CGFloat)maxW;
+
+#pragma mark 获取指定行数的高度 字体
++ (CGFloat)getLineHeightWhitNumberOfLines:(NSInteger)numberOfLines font:(UIFont *)font;
+
+#pragma mark 获取指定行数的高度 富文本
++ (CGFloat)getLineHeightWhitNumberOfLines:(NSInteger)numberOfLines att:(NSAttributedString *)att;
 
 #pragma mark - 其他方法
 #pragma mark 处理个数
@@ -106,13 +109,14 @@ static NSString *sh_fomat_10 = @"HH:mm";
 + (UIView *)getGradientViewWithSize:(CGSize)size startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint colorArr:(NSArray *)colorArr;
 
 #pragma mark 格式化TextField字符串
-+ (void)handleTextField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string rule:(NSArray *)rule;
++ (void)handleTextField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string rule:(NSArray <NSNumber *>*)rule;
 
 #pragma mark 格式化字符串
 /// 格式化字符串
-/// @param text 内容
-/// @param rule 格式([@"3",@"4",@"4"])
-+ (NSString *)handleStrWithText:(NSString *)text rule:(NSArray *)rule;
+/// - Parameters:
+///   - text: 内容
+///   - rule: rule 格式([@3,@4,@4])
++ (NSString *)handleStrWithText:(NSString *)text rule:(NSArray <NSNumber *>*)rule;
 
 #pragma mark 获取某个字符在字符串中出现的次数
 + (NSInteger)appearCountWithStr:(NSString *)str target:(NSString *)target;
@@ -155,10 +159,10 @@ static NSString *sh_fomat_10 = @"HH:mm";
 
 #pragma mark - 权限获取
 #pragma mark 麦克风权限
-+ (void)requestMicrophoneaPemissionsWithResult:(void(^)( BOOL granted))completion;
++ (void)requestMicrophoneaPemissionsWithResult:(void (^)(BOOL granted))completion;
 
 #pragma mark 相机权限
-+ (void)requestCameraPemissionsWithResult:(void(^)( BOOL granted))completion;
++ (void)requestCameraPemissionsWithResult:(void (^)(BOOL granted))completion;
 
 @end
 

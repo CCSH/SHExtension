@@ -29,15 +29,15 @@
     if (!time.length) {
         return @"";
     }
-    
+
     NSDate *date = [self getDateWithTime:time format:format GMT:GMT];
-    
+
     return [self getMsWithDate:date];
 }
 
 + (NSString *)getMsWithDate:(NSDate *)date {
     UInt64 recordTime = [date timeIntervalSince1970] * 1000;
-    
+
     return [NSString stringWithFormat:@"%llu", recordTime];
 }
 
@@ -61,9 +61,9 @@
     if (!ms.length) {
         return @"";
     }
-    
+
     NSDate *date = [self getDateWithMs:ms];
-    
+
     return [self getTimeWithDate:date format:format GMT:GMT];
 }
 
@@ -77,7 +77,7 @@
     if (GMT != -1) {
         [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:GMT]];
     }
-    
+
     return [formatter stringFromDate:date];
 }
 
@@ -86,9 +86,9 @@
     if (!time.length) {
         return @"";
     }
-    
+
     NSDate *date = [self getDateWithTime:time format:currentFormat];
-    
+
     return [self getTimeWithDate:date format:format];
 }
 
@@ -110,13 +110,13 @@
     if (!time.length) {
         return nil;
     }
-    
+
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];
     if (GMT != -1) {
         [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:GMT]];
     }
-    
+
     return [formatter dateFromString:time];
 }
 
@@ -128,30 +128,30 @@
     }
     //转时间
     NSDate *date = [self getDateWithMs:ms];
-    
+
     return [self getInstantTimeWithDate:date];
 }
 
 + (NSString *)getInstantTimeWithDate:(NSDate *)date {
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    
+
     //当前
     NSDateComponents *currentComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday fromDate:date];
-    
+
     //今天
     NSDateComponents *todayComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    
+
     //昨天
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setDay:-1];
     NSDate *yesterday = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:[NSDate date] options:0];
     NSDateComponents *yesterdayComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:yesterday];
-    
+
     if (currentComponents.year == todayComponents.year && currentComponents.month == todayComponents.month && currentComponents.day == todayComponents.day) { //今天
-        
+
         //获取当前时时间戳差
         NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:date];
-        
+
         if (time < kSHMinutes) { // 1分钟内
             return @"刚刚";
         } else if (time < kSHHours) { // 1小时内
@@ -201,12 +201,11 @@
 
 #pragma mark - 计算方法
 #pragma mark 计算富文本的size
-+ (CGSize)getSizeWithAtt:(NSAttributedString *)att
-                 maxSize:(CGSize)maxSize {
++ (CGSize)getSizeWithAtt:(NSAttributedString *)att maxSize:(CGSize)maxSize {
     if (att.length == 0) {
         return CGSizeZero;
     }
-    
+
     CGSize size = [att boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
     if (att.length && !size.width && !size.height) {
         size = maxSize;
@@ -215,13 +214,11 @@
 }
 
 #pragma mark 计算字符串的size
-+ (CGSize)getSizeWithStr:(NSString *)str
-                    font:(UIFont *)font
-                 maxSize:(CGSize)maxSize {
++ (CGSize)getSizeWithStr:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize {
     if (str.length == 0) {
         return CGSizeZero;
     }
-    
+
     CGSize size = [str boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : font} context:nil].size;
     if (str.length && !size.width && !size.height) {
         size = maxSize;
@@ -232,7 +229,6 @@
 #pragma mark 是否超过规定高度
 + (BOOL)isLineWithAtt:(NSAttributedString *)att lineH:(CGFloat)lineH maxW:(CGFloat)maxW {
     CGFloat attH = [self getSizeWithAtt:att maxSize:CGSizeMake(maxW, CGFLOAT_MAX)].height;
-    
     return (attH > ceil(lineH));
 }
 
@@ -241,13 +237,41 @@
     return line - (font.lineHeight - font.pointSize);
 }
 
-#pragma mark 获取属性字符串真实行间距
-+ (CGFloat)lineSpaceWithLineWithAtt:(NSAttributedString *)att line:(CGFloat)line font:(UIFont *)font maxW:(CGFloat)maxW {
+#pragma mark 获取富文本真实行间距
++ (CGFloat)lineSpaceWithLine:(CGFloat)line font:(UIFont *)font att:(NSAttributedString *)att maxW:(CGFloat)maxW {
     if ([self isLineWithAtt:att lineH:font.lineHeight maxW:maxW]) {
         return [self lineSpaceWithLine:line font:font];
     }
     //只有一行行间距为0
     return 0;
+}
+
+#pragma mark 获取指定行数的高度 字体
++ (CGFloat)getLineHeightWhitNumberOfLines:(NSInteger)numberOfLines font:(UIFont *)font {
+    if (numberOfLines <= 0) {
+        return 0;
+    }
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < numberOfLines; i++) {
+        [arr addObject:@""];
+    }
+    NSString *str = [arr componentsJoinedByString:@"\n"];
+    return [SHTool getSizeWithStr:str font:font maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)].height;
+}
+
+#pragma mark 获取指定行数的高度 富文本
++ (CGFloat)getLineHeightWhitNumberOfLines:(NSInteger)numberOfLines att:(NSAttributedString *)att {
+    if (numberOfLines <= 0) {
+        return 0;
+    }
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < numberOfLines; i++) {
+        [arr addObject:@""];
+    }
+    NSString *str = [arr componentsJoinedByString:@"\n"];
+    NSMutableAttributedString *attM = [[NSMutableAttributedString alloc] initWithAttributedString:att];
+    [attM.mutableString setString:str];
+    return [SHTool getSizeWithAtt:attM maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)].height;
 }
 
 #pragma mark - 其他方法
@@ -268,7 +292,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.positivePrefix = @"";
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    
+
     return [formatter stringFromNumber:number];
 }
 
@@ -278,38 +302,31 @@
 }
 
 #pragma mark 处理视频时间
-+ (NSString *)handleTime:(NSString *)str format:(NSCalendarUnit)format{
-    
++ (NSString *)handleTime:(NSString *)str format:(NSCalendarUnit)format {
     __block NSTimeInterval interval = str.integerValue;
 
     if ([str containsString:@":"]) {
         interval = 0;
-        
+
         NSArray *arr = [str componentsSeparatedByString:@":"];
         arr = [[arr reverseObjectEnumerator] allObjects];
-        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            switch (idx) {
-                case 0:
-                {
-                    //秒
-                    interval += [obj intValue];
-                }
-                    break;
-                case 1:
-                {
-                    //分
-                    interval += [obj intValue]*60;
-                }
-                    break;
-                case 2:
-                {
-                    //时
-                    interval += [obj intValue]*60*60;
-                }
-                    break;
-                default:
-                    break;
-            }
+        [arr enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+          switch (idx) {
+              case 0: {
+                  //秒
+                  interval += [obj intValue];
+              } break;
+              case 1: {
+                  //分
+                  interval += [obj intValue] * 60;
+              } break;
+              case 2: {
+                  //时
+                  interval += [obj intValue] * 60 * 60;
+              } break;
+              default:
+                  break;
+          }
         }];
     }
 
@@ -317,19 +334,19 @@
     formatter.unitsStyle = NSDateComponentsFormatterUnitsStylePositional;
     formatter.zeroFormattingBehavior = NSDateComponentsFormatterZeroFormattingBehaviorPad;
     formatter.allowedUnits = format;
-    
+
     NSString *dealTime = [formatter stringFromTimeInterval:interval];
-    
-    if (dealTime.length%3 == 1) {
+
+    if (dealTime.length % 3 == 1) {
         //补0
         dealTime = [NSString stringWithFormat:@"0%@", dealTime];
     }
-    
+
     return dealTime;
 }
 
 #pragma mark 处理视频时间(默认：分秒)
-+ (NSString *)handleTime:(NSString *)str{
++ (NSString *)handleTime:(NSString *)str {
     return [self handleTime:str format:NSCalendarUnitMinute | NSCalendarUnitSecond];
 }
 
@@ -346,34 +363,34 @@
     gradientLayer.frame = view.bounds;
     //  创建渐变色数组，需要转换为CGColor颜色
     gradientLayer.colors = colorArr;
-    
+
     //  设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
     gradientLayer.startPoint = startPoint;
     gradientLayer.endPoint = endPoint;
-    
+
     // 设置渐变位置
     CGFloat loc = 1.0 / (colorArr.count - 1);
     NSMutableArray *location = [[NSMutableArray alloc] init];
     [location addObject:@0];
     NSInteger index = 1;
-    
+
     while (index != colorArr.count) {
         [location addObject:[NSNumber numberWithFloat:index * loc]];
         index++;
     }
-    
+
     //设置颜色变化点，取值范围 0.0~1.0
     gradientLayer.locations = location;
-    
+
     [view.layer addSublayer:gradientLayer];
-    
+
     return view;
 }
 
 #pragma mark 格式化TextField字符串
-+ (void)handleTextField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string rule:(NSArray *)rule {
++ (void)handleTextField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string rule:(NSArray <NSNumber *>*)rule {
     NSString *text = textField.text;
-    
+
     if (string.length == 0) {
         //删除空格则多删除一位
         NSString *temp = [text substringWithRange:range];
@@ -381,69 +398,69 @@
             range = NSMakeRange(range.location - 1, range.length + 1);
         }
     }
-    
+
     //去除空格
     NSString *str = [string stringByReplacingOccurrencesOfString:@" " withString:@""];
     text = [text stringByReplacingCharactersInRange:range withString:str];
-    
+
     NSInteger count = [SHTool appearCountWithStr:[text substringWithRange:NSMakeRange(0, range.location)] target:@" "];
-    
+
     text = [text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
+
     textField.text = [self handleStrWithText:text rule:rule];
-    
+
     //记录光标位置
     if (string.length) {
         if ((textField.text.length >= range.location + str.length)) {
             NSString *temp = [textField.text substringWithRange:NSMakeRange(0, range.location + str.length)];
-            
+
             count = [self appearCountWithStr:temp target:@" "] - count;
             range = NSMakeRange(range.location + count, 0);
         }
-        
+
         range = NSMakeRange(range.location + str.length, 0);
     }
-    
+
     //保护删除最后一位
     if (range.location > textField.text.length) {
         range = NSMakeRange(textField.text.length, 0);
     }
-    
+
     //设置光标位置
     UITextPosition *position = [textField positionFromPosition:textField.beginningOfDocument offset:range.location];
     UITextRange *textRange = [textField textRangeFromPosition:position toPosition:position];
-    
+
     textField.selectedTextRange = textRange;
 }
 
 #pragma mark 格式化字符串
-+ (NSString *)handleStrWithText:(NSString *)text rule:(NSArray *)rule {
++ (NSString *)handleStrWithText:(NSString *)text rule:(NSArray <NSNumber *>*)rule {
     __block NSString *tempStr = @"";
     __block NSInteger tempIndex = 0;
-    
-    [rule enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *_Nonnull stop) {
-        NSRange range = NSMakeRange(tempIndex, obj.intValue);
-        tempIndex = range.location + range.length;
-        NSInteger start = tempIndex - obj.intValue;
-        
-        if (text.length <= tempIndex) {
-            //拼接剩余
-            tempStr = [tempStr stringByAppendingString:[text substringWithRange:NSMakeRange(start, text.length - start)]];
-            *stop = YES;
-        } else {
-            //插入字符
-            NSString *temp = [text substringWithRange:range];
-            temp = [temp stringByAppendingString:@" "];
-            tempStr = [tempStr stringByAppendingString:temp];
-            
-            if (idx == rule.count - 1) { //最后一位
-                start = tempIndex;
-                //拼接剩余
-                tempStr = [tempStr stringByAppendingString:[text substringWithRange:NSMakeRange(start, text.length - start)]];
-            }
-        }
+
+    [rule enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL *_Nonnull stop) {
+      NSRange range = NSMakeRange(tempIndex, obj.intValue);
+      tempIndex = range.location + range.length;
+      NSInteger start = tempIndex - obj.intValue;
+
+      if (text.length <= tempIndex) {
+          //拼接剩余
+          tempStr = [tempStr stringByAppendingString:[text substringWithRange:NSMakeRange(start, text.length - start)]];
+          *stop = YES;
+      } else {
+          //插入字符
+          NSString *temp = [text substringWithRange:range];
+          temp = [temp stringByAppendingString:@" "];
+          tempStr = [tempStr stringByAppendingString:temp];
+
+          if (idx == rule.count - 1) { //最后一位
+              start = tempIndex;
+              //拼接剩余
+              tempStr = [tempStr stringByAppendingString:[text substringWithRange:NSMakeRange(start, text.length - start)]];
+          }
+      }
     }];
-    
+
     return tempStr;
 }
 
@@ -458,7 +475,7 @@
     UIWindow *window = [self getWindow];
     UIViewController *rootVC = window.rootViewController;
     UIViewController *activeVC = nil;
-    
+
     if ([rootVC isKindOfClass:[UINavigationController class]]) {
         activeVC = [(UINavigationController *)rootVC visibleViewController];
     } else if ([rootVC isKindOfClass:[UITabBarController class]]) {
@@ -467,10 +484,10 @@
         activeVC = rootVC.presentedViewController;
     } else if (rootVC.childViewControllers.count > 0) {
         activeVC = [rootVC.childViewControllers lastObject];
-    } else{
+    } else {
         activeVC = rootVC;
     }
-    
+
     return activeVC;
 }
 
@@ -522,7 +539,7 @@
     CGRect frame;
     if (@available(iOS 13.0, *)) {
         frame = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame;
-    }else{
+    } else {
         frame = [UIApplication sharedApplication].statusBarFrame;
     }
     return CGRectGetHeight(frame);
@@ -559,28 +576,27 @@
 + (NSString *)getDeviceToken:(NSData *)deviceToken {
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
+
     if (@available(iOS 13, *)) {
         if (![deviceToken isKindOfClass:[NSData class]]) {
             return token;
         }
         const unsigned *tokenBytes = [deviceToken bytes];
         token = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
-                 ntohl(tokenBytes[0]),
-                 ntohl(tokenBytes[1]),
-                 ntohl(tokenBytes[2]),
-                 ntohl(tokenBytes[3]),
-                 ntohl(tokenBytes[4]),
-                 ntohl(tokenBytes[5]),
-                 ntohl(tokenBytes[6]),
-                 ntohl(tokenBytes[7])];
+                                           ntohl(tokenBytes[0]),
+                                           ntohl(tokenBytes[1]),
+                                           ntohl(tokenBytes[2]),
+                                           ntohl(tokenBytes[3]),
+                                           ntohl(tokenBytes[4]),
+                                           ntohl(tokenBytes[5]),
+                                           ntohl(tokenBytes[6]),
+                                           ntohl(tokenBytes[7])];
     }
     return token;
 }
 
 #pragma mark 更换图标
-+ (void)changeIcon:(NSString *)icon{
-    
++ (void)changeIcon:(NSString *)icon {
     if (@available(iOS 10.3, *)) {
         if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
             return;
@@ -589,11 +605,12 @@
         // Fallback on earlier versions
     }
     if (@available(iOS 10.3, *)) {
-        [[UIApplication sharedApplication] setAlternateIconName:icon completionHandler:^(NSError * _Nullable error) {
-            if (error) {
-                NSLog(@"更换app图标发生错误了： %@",error);
-            }
-        }];
+        [[UIApplication sharedApplication] setAlternateIconName:icon
+                                              completionHandler:^(NSError *_Nullable error) {
+                                                if (error) {
+                                                    NSLog(@"更换app图标发生错误了： %@", error);
+                                                }
+                                              }];
     } else {
         // Fallback on earlier versions
     }
@@ -602,25 +619,24 @@
 #pragma mark 坐标生成路径
 + (CGPathRef)pathFromPoints:(NSArray *)points {
     if (points != nil) {
-    
         CGMutablePathRef path = CGPathCreateMutable();
-        
-        [points enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSArray *arrXY = [obj componentsSeparatedByString:@","];
-            if (arrXY.count >= 2) {
-                CGFloat pointX = [arrXY[0] floatValue];
-                CGFloat pointY = [arrXY[1] floatValue];
-                if (idx == 0) {
-                    CGPathMoveToPoint(path, NULL, pointX, pointY);
-                } else {
-                    CGPathAddLineToPoint(path, NULL, pointX, pointY);
-                }
-            }
+
+        [points enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+          NSArray *arrXY = [obj componentsSeparatedByString:@","];
+          if (arrXY.count >= 2) {
+              CGFloat pointX = [arrXY[0] floatValue];
+              CGFloat pointY = [arrXY[1] floatValue];
+              if (idx == 0) {
+                  CGPathMoveToPoint(path, NULL, pointX, pointY);
+              } else {
+                  CGPathAddLineToPoint(path, NULL, pointX, pointY);
+              }
+          }
         }];
         CGPathCloseSubpath(path);
         return path;
     }
-    
+
     return nil;
 }
 
@@ -629,8 +645,8 @@
 + (void)requestMicrophoneaPemissionsWithResult:(void (^)(BOOL granted))completion {
     if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
         AVAuthorizationStatus permission =
-        [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-        
+            [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+
         switch (permission) {
             case AVAuthorizationStatusAuthorized: {
                 //已授权
@@ -642,12 +658,12 @@
                 //未授权
                 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio
                                          completionHandler:^(BOOL granted) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        if (completion) {
-                            completion(granted);
-                        }
-                    });
-                }];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                             if (completion) {
+                                                 completion(granted);
+                                             }
+                                           });
+                                         }];
             } break;
             case AVAuthorizationStatusDenied: {
                 //用户拒绝
@@ -671,8 +687,8 @@
 + (void)requestCameraPemissionsWithResult:(void (^)(BOOL granted))completion {
     if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
         AVAuthorizationStatus permission =
-        [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        
+            [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+
         switch (permission) {
             case AVAuthorizationStatusAuthorized: {
                 //已授权
@@ -684,12 +700,12 @@
                 //未授权
                 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
                                          completionHandler:^(BOOL granted) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        if (completion) {
-                            completion(granted);
-                        }
-                    });
-                }];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                             if (completion) {
+                                                 completion(granted);
+                                             }
+                                           });
+                                         }];
             } break;
             case AVAuthorizationStatusDenied: {
                 //用户拒绝
