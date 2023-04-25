@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'SHExtension'
-    s.version      = '1.6.2'
+    s.version      = '1.6.3'
     
     s.platform     = :ios, '11.0'
     

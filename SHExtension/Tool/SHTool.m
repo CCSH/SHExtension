@@ -596,24 +596,23 @@
 }
 
 #pragma mark 更换图标
-+ (void)changeIcon:(NSString *)icon {
-    if (@available(iOS 10.3, *)) {
-        if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
-            return;
-        }
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 10.3, *)) {
-        [[UIApplication sharedApplication] setAlternateIconName:icon
-                                              completionHandler:^(NSError *_Nullable error) {
-                                                if (error) {
-                                                    NSLog(@"更换app图标发生错误了： %@", error);
-                                                }
-                                              }];
-    } else {
-        // Fallback on earlier versions
-    }
++ (void)changeIcon:(NSString *)icon{
+     if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlternateIcons)] &&
+         [[UIApplication sharedApplication] supportsAlternateIcons])
+     {
+         NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+         [selectorString appendString:@"_setAlternate"];
+         [selectorString appendString:@"IconName:"];
+         [selectorString appendString:@"completionHandler:"];
+         
+         SEL selector = NSSelectorFromString(selectorString);
+         IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+         void (*func)(id, SEL, id, id) = (void *)imp;
+         if (func)
+         {
+             func([UIApplication sharedApplication], selector, icon, ^(NSError * _Nullable error) {});
+         }
+     }
 }
 
 #pragma mark 坐标生成路径
