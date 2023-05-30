@@ -5,8 +5,8 @@ Pod::Spec.new do |s|
     s.summary      = '常用类别方法，拓展，工具类'
     s.authors      = { 'CCSH' => '624089195@qq.com' }
     s.homepage     = 'https://github.com/CCSH/#{s.name}'
-    s.source       = { :git => 'https://github.com/CCSH/#{s.name}.git',
-                       :tag => s.version.to_s }
+    s.source       = {:git => "https://github.com/CCSH/#{s.name}.git", :tag => s.version }
+
     s.platform     = :ios, '11.0'
     s.requires_arc = true
     s.license      = 'MIT'
