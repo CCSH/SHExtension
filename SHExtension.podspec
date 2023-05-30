@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.license      = 'MIT'
     
-    s.source_files = '#{s.name}'
+    s.source_files = '#{s.name}/**/*.{h,m}'
     s.public_header_files = '#{s.name}/#{s.name}.{h}'
     
     #部分功能
