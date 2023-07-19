@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -163,6 +164,9 @@ static NSString *sh_fomat_10 = @"HH:mm";
 
 #pragma mark 相机权限(Privacy - Camera Usage Description)
 + (void)requestCameraPemissionsWithResult:(void (^)(BOOL granted))completion;
+
+#pragma mark 蓝牙权限(Privacy - Bluetooth Always Usage Description)
++ (void)requestBluetoothPemissionsWithResult:(void (^)(CBManagerState state))completion;
 
 @end
 
