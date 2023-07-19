@@ -20,7 +20,7 @@
 @implementation SHTool
 
 #pragma mark 实例化
-+ (CCSH *)share{
++ (SHTool *)share{
     static SHTool *tool;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
