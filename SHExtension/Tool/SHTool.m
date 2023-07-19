@@ -10,7 +10,24 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Speech/Speech.h>
 
+@interface SHTool ()<CBCentralManagerDelegate>
+
+@property (nonatomic, copy) void(^bluetoothBlock)(CBManagerState state);
+@property (nonatomic, strong) CBCentralManager *bluetoothManger;
+
+@end
+
 @implementation SHTool
+
+#pragma mark 实例化
++ (CCSH *)share{
+    static SHTool *tool;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tool = [[self alloc]init];
+    });
+    return tool;
+}
 
 #pragma mark - 时间戳
 #pragma mark 获取当前时间戳
@@ -640,7 +657,7 @@
 }
 
 #pragma mark - 权限获取
-#pragma mark 麦克风权限
+#pragma mark 麦克风权限(Privacy - Microphone Usage Description)
 + (void)requestMicrophoneaPemissionsWithResult:(void (^)(BOOL granted))completion {
     if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
         AVAuthorizationStatus permission =
@@ -682,7 +699,7 @@
     }
 }
 
-#pragma mark 相机权限
+#pragma mark 相机权限(Privacy - Camera Usage Description)
 + (void)requestCameraPemissionsWithResult:(void (^)(BOOL granted))completion {
     if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]) {
         AVAuthorizationStatus permission =
@@ -721,6 +738,21 @@
                 }
             } break;
         }
+    }
+}
+
+#pragma mark 蓝牙权限(Privacy - Bluetooth Always Usage Description)
++ (void)requestBluetoothPemissionsWithResult:(void (^)(CBManagerState state))completion{
+    if(![self share].bluetoothManger){
+        [self share].bluetoothManger = [[CBCentralManager alloc] initWithDelegate:[self share] queue:nil options:@{CBCentralManagerOptionShowPowerAlertKey:@(NO)}];
+    }
+    [self share].bluetoothBlock = completion;
+}
+
+#pragma mark - CBCentralManagerDelegate
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+    if(self.bluetoothBlock){
+        self.bluetoothBlock(central.state);
     }
 }
 
