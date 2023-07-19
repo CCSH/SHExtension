@@ -158,10 +158,10 @@ static NSString *sh_fomat_10 = @"HH:mm";
 + (CGPathRef)pathFromPoints:(NSArray *)points;
 
 #pragma mark - 权限获取
-#pragma mark 麦克风权限
+#pragma mark 麦克风权限(Privacy - Microphone Usage Description)
 + (void)requestMicrophoneaPemissionsWithResult:(void (^)(BOOL granted))completion;
 
-#pragma mark 相机权限
+#pragma mark 相机权限(Privacy - Camera Usage Description)
 + (void)requestCameraPemissionsWithResult:(void (^)(BOOL granted))completion;
 
 @end
