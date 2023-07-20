@@ -10,6 +10,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Speech/Speech.h>
 
+#define kSHMinutes (60)
+#define kSHHours (60 * kSHMinutes)
+#define kSHDay (24 * kSHHours)
+
 @interface SHTool ()<CBCentralManagerDelegate>
 
 @property (nonatomic, copy) void(^bluetoothBlock)(CBManagerState state);

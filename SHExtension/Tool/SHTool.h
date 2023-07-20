@@ -12,10 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define kSHMinutes (60)
-#define kSHHours (60 * kSHMinutes)
-#define kSHDay (24 * kSHHours)
-
 static NSString *sh_fomat_1 = @"YYYY-MM-dd HH:mm:ss";
 static NSString *sh_fomat_2 = @"YYYY.MM.dd";
 static NSString *sh_fomat_3 = @"YYYY.MM.dd HH:mm";
